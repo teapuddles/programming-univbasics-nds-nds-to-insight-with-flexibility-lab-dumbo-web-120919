@@ -37,7 +37,6 @@ end
 
 def movies_with_director_key(name, movies_collection)
   new_collection = []
-  binding.pry
   i = 0
   while i < movies_collection.length do
     movie_info = movies_collection[i]
@@ -70,7 +69,7 @@ def movies_with_directors_set(source)
   j = 0 
   while j < source.length do 
   name_key = source[j][:name]
-  movies_key = source[j][:title]
+  movies_key = source[j][:movies]
   new_array << movies_with_director_key(name_key, movies_key)
   j += 1
   end
