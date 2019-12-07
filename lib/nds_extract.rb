@@ -37,7 +37,11 @@ end
 
 def movies_with_director_key(name, movies_collection)
   new_collection = []
+<<<<<<< HEAD
   i = 0
+=======
+  i = 0 
+>>>>>>> ed0ac54c0ae037ed2f152ff08f98af28862669e8
   while i < movies_collection.length do
     movie_info = movies_collection[i]
     new_collection << movie_with_director_name(name, movie_info)
@@ -51,6 +55,7 @@ def gross_per_studio(collection)
   gross_hash = {}
   k = 0 
   while k < collection.length do 
+<<<<<<< HEAD
     movie = collection[k]
     studio_name = collection[k][:studio]
     studio_gross = collection[k][:worldwide_gross]
@@ -73,6 +78,29 @@ def movies_with_directors_set(source)
   new_array << movies_with_director_key(name_key, movies_key)
   j += 1
   end
+=======
+    studio_name = collection[k][:studio]
+    gross_hash[studio_name] = 0
+    l = 0
+    while l < studio_name.length do 
+    studio_gross = collection[l][:worldwide_gross]
+    gross_hash[studio_name] += studio_gross
+    l += 1 
+  end
+    k += 1 
+  end
+  return gross_hash #{:studio => worldwide_gross}
+end
+
+def movies_with_directors_set(source)
+  new_array = []
+#  j = 0 
+ # while j < source.length do 
+#  name_key = source[j]
+ #   new_array << name_key
+  #  j += 1
+ # end
+>>>>>>> ed0ac54c0ae037ed2f152ff08f98af28862669e8
   return new_array #[AoA of movies with a director key]
 end
 
