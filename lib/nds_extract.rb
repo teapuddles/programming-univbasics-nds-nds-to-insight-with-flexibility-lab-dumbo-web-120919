@@ -37,7 +37,8 @@ end
 
 def movies_with_director_key(name, movies_collection)
   new_collection = []
-  i = 0 
+  binding.pry
+  i = 0
   while i < movies_collection.length do
     movie_info = movies_collection[i]
     new_collection << movie_with_director_name(name, movie_info)
@@ -65,15 +66,15 @@ def gross_per_studio(collection)
 end
 
 def movies_with_directors_set(source)
- # new_array = []
- # j = 0 
- # while j < source.length do 
-#  name_key = source[j][:name]
-#  new_array[name_key] = source[:title]
- #binding.pry
-#  j += 1
-#  end
- # return new_array #[AoA of movies with a director key]
+ new_array = []
+  j = 0 
+  while j < source.length do 
+  name_key = source[j][:name]
+  movies_key = source[j][:title]
+  new_array << movies_with_director_key(name_key, movies_key)
+  j += 1
+  end
+  return new_array #[AoA of movies with a director key]
 end
 
 # ----------------    End of Your Code Region --------------------
