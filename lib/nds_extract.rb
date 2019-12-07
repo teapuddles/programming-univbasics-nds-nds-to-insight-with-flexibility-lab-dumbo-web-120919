@@ -54,9 +54,8 @@ def gross_per_studio(collection)
     movie = collection[k]
     studio_name = collection[k][:studio]
     studio_gross = collection[k][:worldwide_gross]
-  # binding.pry
     if !gross_hash[movie[:studio]] 
-        gross_hash[movie[:studio]] = studio_gross
+        gross_hash[movie[:studio]] = movie[:worldwide_gross]
     else
       gross_hash[movie[:studio]] += studio_gross
     end
@@ -66,14 +65,15 @@ def gross_per_studio(collection)
 end
 
 def movies_with_directors_set(source)
-  new_array = []
-#  j = 0 
+ # new_array = []
+ # j = 0 
  # while j < source.length do 
-#  name_key = source[j]
- #   new_array << name_key
-  #  j += 1
- # end
-  return new_array #[AoA of movies with a director key]
+#  name_key = source[j][:name]
+#  new_array[name_key] = source[:title]
+ #binding.pry
+#  j += 1
+#  end
+ # return new_array #[AoA of movies with a director key]
 end
 
 # ----------------    End of Your Code Region --------------------
